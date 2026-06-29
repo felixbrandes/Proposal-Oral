@@ -23,7 +23,8 @@
 \definecolor{ink}{HTML}{1C1C1C}        % body text
 \definecolor{muted}{HTML}{7A8691}      % captions, subtitles, secondary text
 \definecolor{danger}{HTML}{C44536}     % alerts / exclusion figures
-
+\definecolor{VeronaBlue}{RGB}{18,45,75}
+\newcommand{\highlight}[1]{\textcolor{VeronaBlue}{\textbf{#1}}}
 % ------------------------------------------------------------- bemer colors -
 \setbeamercolor{structure}{fg=slate}
 \setbeamercolor{normal text}{fg=ink,bg=white}
@@ -242,14 +243,12 @@
 }
 \makeatother
 
-
 \begin{document}
 
 \begin{frame}[plain,noframenumbering]
   \titlepage
 \end{frame}
 
-% ---------------------------------------------------------------- Slide 1 ---
 \begin{frame}{Curriculum Vitae}
   \begin{itemize}
     \item \textbf{School} \\
@@ -267,7 +266,6 @@
   \end{itemize}
 \end{frame}
 
-% ---------------------------------------------------------------- Slide 2 ---
 \begin{frame}{Master Thesis}
   \begin{block}{Research Question}
     How can you improve investments into Start-Ups and SMEs through
@@ -275,7 +273,6 @@
   \end{block}
 \end{frame}
 
-% ---------------------------------------------------------------- Slide 3 ---
 \begin{frame}{Agentix}
   \begin{itemize}
     \item AI at the forefront of Innovation
@@ -284,32 +281,35 @@
   \end{itemize}
 \end{frame}
 
-% ---------------------------------------------------------------- Slide 4 ---
-\begin{frame}{Research Proposal: Overview}
-    \begin{block}{Core Question} Do the selection signals used in public SME and start-up funding programmes generate technological innovation, observable spillover, and economic value? 
-    \end{block}
-  \vspace{0.6ex}
-  \begin{itemize}
-    \item \textbf{Motivation:} Private returns to innovation fall short of social returns
-      (Arrow, 1962) --- the appropriability problem is sharpest for early-stage firms
-    \item \textbf{Gap:} Literature evaluates \emph{whether} grants work; not \emph{which
-      selection signals} generate which outcomes
-    \item \textbf{Contribution:} Shifts programme evaluation from beneficiary status to the
-      economic content of the selection rules
-  \end{itemize}
+\begin{frame}{Research proposal: selection signals in MSME funding}
+
+\begin{center}
+\Large
+\highlight{Do the signals used to select firms generate the\\ value public funding is meant to create?}
+\end{center}
+
+\vspace{0.35cm}
+
+\normalsize
+\begin{itemize}
+  \item Which observable signals enter the funding decision?
+  \item Do these signals predict innovation, spillovers, and economic value?
+  \item Do programmes weight signals differently when they define value differently?
+\end{itemize}
+
+\vspace{0.3cm}
+
+\small
+The project separates the \highlight{selection mechanism} from the grant itself.
+
 \end{frame}
 
-% ---------------------------------------------------------------- Slide 5 ---
 \begin{frame}{Theoretical Framework}
   \textbf{Two-step design}
   \vspace{0.5ex}
   \begin{itemize}
-    \item[\color{accent}1.] \textbf{Identify the selection rule} --- code programme documents,
-      scoring rubrics and eligibility criteria; recover implied signal weights; compare
-      stated vs.\ applied weights
-    \item[\color{accent}2.] \textbf{Estimate causal effects} --- regression-discontinuity around
-      score / budget cut-offs; applicants just above and below the threshold are otherwise
-      comparable
+    \item[\color{accent}1.] \textbf{Identify the selection rule} --- code programme documents, scoring rubrics and eligibility criteria; recover implied signal weights; compare stated vs.\ applied weights
+    \item[\color{accent}2.] \textbf{Estimate causal effects} --- regression-discontinuity around score / budget cut-offs; applicants just above and below the threshold are otherwise comparable
   \end{itemize}
   \vspace{0.8ex}
   \textbf{Three outcome layers}
@@ -321,23 +321,19 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Empirical Framework} 
-\begin{itemize} 
-  \item \textbf{Unit of analysis:} enterprise--application pair. 
-  \item \textbf{Object of interest:} observable application signals used in the funding decision. 
-  \item \textbf{Treatment margin:} applicants just above and just below score or budget cut-offs. 
-  \item \textbf{Preferred design:} regression discontinuity around selection thresholds. 
-  \item \textbf{Outcome hierarchy:} 
-  \begin{itemize} 
-    \item technological innovation
-    \item observable spillover
-    \item local economic value
-  \end{itemize} 
-\end{itemize} 
+\begin{frame}{Empirical framework}
+  \begin{itemize}
+    \item \highlight{Unit:} enterprise--application or enterprise--programme observation
+    \item \highlight{Population:} SMEs applying or eligible for innovation support
+    \item \highlight{Variation:} scoring rules, thresholds, grant amounts, programme design
+    \item \highlight{Comparison:} firms close to allocation margins, or comparable firms over time
+  \end{itemize}
+
+  \vspace{0.4cm}
+
+  The empirical design depends on data access, but the estimand must stay narrow.
 \end{frame}
 
-
-% ---------------------------------------------------------------- Slide 6 ---
 \begin{frame}{Research Proposal: Data and Methodology}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
@@ -363,8 +359,6 @@
     \end{column}
   \end{columns}
 \end{frame}
-
-
 
 \begin{frame}{Expected Contribution} 
 \begin{itemize} 
