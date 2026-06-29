@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1782726156.81251 "/Users/fwb/git/Proposal-Oral/presentation.tex" "presentation.pdf" "presentation" 1782726157.51678 0
-  "/Users/fwb/git/Proposal-Oral/presentation.tex" 1782726156.61107 16795 852ae2a10aeaa16330a20636eebc5bbe ""
+["pdflatex"] 1782754127.42751 "/Users/fwb/git/Proposal-Oral/presentation.tex" "presentation.pdf" "presentation" 1782754128.11347 0
+  "/Users/fwb/git/Proposal-Oral/presentation.tex" 1782754127.27505 16663 9cd20471d60a53447b7936bacba6f630 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -27,7 +27,6 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm" 1336178347 1696 aaa5bbd1f47f001247d42218ce371101 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi12.tfm" 1336178347 1708 6d4e701533a08297ca48058e38aa9e38 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm" 1336178347 1676 fb6c6a335484692abff897d6e8965829 ""
-  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1248133631 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1248133631 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb" 1248133631 24393 3b7eb51a67a0a62aec5849271bdb9c2e ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb" 1248133631 24420 52dbb8e8aa0069a1b987309557f8d303 ""
@@ -207,10 +206,10 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1774630490 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774630456 3636772 617e716139a7a749bb2cc97458e75cc9 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "presentation.aux" 1782726157.47238 1851 69a9a3b947b72d684ec005ac993f7932 "pdflatex"
-  "presentation.nav" 1782726157.47302 1202 1d50c3857c7a64ab3c9b4eb4b26f9a97 "pdflatex"
-  "presentation.out" 1782726157.20132 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation.tex" 1782726156.61107 16795 852ae2a10aeaa16330a20636eebc5bbe ""
+  "presentation.aux" 1782754128.07026 1851 69a9a3b947b72d684ec005ac993f7932 "pdflatex"
+  "presentation.nav" 1782754128.07087 1202 1d50c3857c7a64ab3c9b4eb4b26f9a97 "pdflatex"
+  "presentation.out" 1782754127.81724 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "presentation.tex" 1782754127.27505 16663 9cd20471d60a53447b7936bacba6f630 ""
   (generated)
   "presentation.aux"
   "presentation.log"

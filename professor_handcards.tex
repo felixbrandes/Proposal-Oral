@@ -1,0 +1,174 @@
+
+\documentclass[10pt]{article}
+\usepackage[a4paper,landscape,margin=10mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{ragged2e}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.8pt}
+\setlist[itemize]{leftmargin=*,nosep,topsep=1pt,itemsep=1pt}
+\definecolor{deepblue}{HTML}{17324D}
+\definecolor{softblue}{HTML}{EAF1F8}
+\definecolor{softgreen}{HTML}{EAF6EF}
+\definecolor{softamber}{HTML}{FFF5DF}
+\definecolor{softred}{HTML}{FBEDEA}
+\definecolor{linegray}{HTML}{D3D8DE}
+\newcommand{\tag}[1]{\fcolorbox{linegray}{softblue}{\scriptsize\strut #1}}
+\newcommand{\cardtitle}[3]{%
+{\sffamily\bfseries\color{deepblue}\fontsize{20}{21}\selectfont #1}\hfill {\sffamily\small #2}\\[-1pt]
+{\sffamily\small\color{black!70} #3}\par\vspace{2pt}\hrule\vspace{4pt}}
+\newcommand{\boxsection}[3]{%
+\fcolorbox{linegray}{#1}{\begin{minipage}[t]{0.97\linewidth}\vspace{2pt}{\sffamily\bfseries\color{deepblue}#2}\par\vspace{1pt}\RaggedRight #3\vspace{2pt}\end{minipage}}\par\vspace{3pt}}
+\newcommand{\fitline}[2]{\textbf{#1:} #2\par}
+\begin{document}
+
+\section*{Professor Hand-Cards}
+\vspace{-4mm}
+
+\cardtitle{Paola Bertoli}{UniVR Department of Economics}{Full Professor - Public economics, health economics, law and economics}
+\begin{minipage}[t]{0.49\linewidth}
+\boxsection{softblue}{Glance profile}{
+\textbf{Main field:} public economics with strong health-policy and regulation angle.\\
+\textbf{Official sector:} ECON-01/A Economics; ERC fields: applied microeconomics, development/political economics.\\
+\textbf{Teaching anchor:} Health Economics, Public Finance, International Taxation, Industrial and Business Economics.\\
+\textbf{Institutional anchor:} Chair of CORDI; member of the PhD Faculty Board; Deputy PhD coordinator / QA Board.
+}
+\boxsection{softgreen}{Research map}{
+\begin{itemize}
+\item Health-care markets, regulation, quality and quantity of services.
+\item Public expenditure in health, education, welfare and pensions.
+\item Policy evaluation in health and pharmaceutical spending.
+\item Incentives for orphan-drug development; IP rights and reimbursement policy.
+\item Inequality in health and child/adolescent development.
+\end{itemize}
+}
+\boxsection{softamber}{Methods / data intuition}{
+Applied micro and public-policy evaluation. Useful lens: policy design, regulation, incentives, individual-level data governance and outcome measurement.
+}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}
+\boxsection{softgreen}{Fit with Felix}{
+\fitline{Direct overlap}{public policy design and evaluation, incentives, regulation, welfare logic.}
+\fitline{Method overlap}{causal policy evaluation and administrative/individual-level data.}
+\fitline{Substantive overlap}{not mainly start-up innovation; strongest link is incentive design and public value beyond private returns.}
+\fitline{Proposal link}{grant selection rules are treated like policy instruments under imperfect information.}
+}
+\boxsection{softblue}{Use in oral exam}{
+\textit{``Prof. Bertoli is relevant to my proposal because her work sits at the intersection of public economics, policy design, regulation and evaluation. My project also studies a public-policy instrument, but in SME and start-up funding. The common question is whether the design of the instrument produces the public value it claims to target.''}
+}
+\boxsection{softred}{Do not overstate}{
+Do not say she is an innovation-economics or start-up-finance professor. The fit is public economics, policy design, incentives and evaluation.
+}
+\boxsection{softamber}{Good questions to ask}{
+\begin{itemize}
+\item How would you separate stated policy objectives from actual allocation rules?
+\item How should I treat multi-layered public-value outcomes in an empirical design?
+\item What are the main risks when using individual-level administrative data?
+\item Can health-policy incentive design inform SME grant selection design?
+\end{itemize}
+}
+\end{minipage}
+\vfill{\scriptsize Source anchors: official UniVR profile; Felix proposal, June 2026. Memorise: public economics - policy evaluation - incentives - regulation - CORDI/data.}
+
+\newpage
+
+\cardtitle{Giuseppe Buccheri}{UniVR Department of Economics}{Associate Professor - Econometrics, financial econometrics, finance}
+\begin{minipage}[t]{0.49\linewidth}
+\boxsection{softblue}{Glance profile}{
+\textbf{Main field:} econometrics with a financial-econometrics and time-series focus.\\
+\textbf{Official sector:} ECON-05/A Econometrics; ERC fields: econometrics, game theory, decision theory; finance and financial markets.\\
+\textbf{Teaching anchor:} Time Series and Forecasting; Quantitative Methods for Business and Economics; Data Management.\\
+\textbf{Institutional anchor:} member of the PhD Faculty Board, Research Committee, Teaching Committee and PhD QA Board.
+}
+\boxsection{softgreen}{Research map}{
+\begin{itemize}
+\item Financial econometrics and market microstructure.
+\item High-frequency and asynchronous financial data.
+\item Nonlinear filtering, smoothing and score-driven models.
+\item Dynamic factor models and covariance/correlation modelling.
+\item Forecasting, risk measurement and noisy data environments.
+\end{itemize}
+}
+\boxsection{softamber}{Methods / data intuition}{
+Advanced econometrics: time-series models, latent states, score-driven dynamics, filtering, likelihood-based estimation, high-frequency data and robustness to measurement noise.
+}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}
+\boxsection{softgreen}{Fit with Felix}{
+\fitline{Direct overlap}{weak on SME innovation as a topic.}
+\fitline{Method overlap}{strong: noisy scores, signal weights, dynamic scoring rules, model identification.}
+\fitline{Proposal link}{Felix recovers implied selection weights from programme documents and award data; this is an econometric measurement problem.}
+\fitline{Useful angle}{treat application scores and selection signals as data-generating objects, not neutral controls.}
+}
+\boxsection{softblue}{Use in oral exam}{
+\textit{``Prof. Buccheri is relevant to my project mainly through the econometric side. My proposal depends on recovering and validating selection weights from noisy programme data. His work on dynamic econometric models, filtering and financial time series is not substantively about grants, but it is useful for thinking carefully about noisy signals, identification and prediction.''}
+}
+\boxsection{softred}{Do not overstate}{
+Do not frame him as public-policy or innovation-policy fit. Frame him as methodological support for econometrics, scoring data, signal extraction and robustness.
+}
+\boxsection{softamber}{Good questions to ask}{
+\begin{itemize}
+\item How would you model selection scores if the underlying signal weights are only partially observed?
+\item What robustness checks would you expect when scores are noisy or manipulated?
+\item Can dynamic models help detect changes in scoring practice across calls?
+\item How should I avoid over-interpreting implied weights as causal mechanisms?
+\end{itemize}
+}
+\end{minipage}
+\vfill{\scriptsize Source anchors: official UniVR profile; selected publication themes from profile/personal research pages; Felix proposal, June 2026. Memorise: econometrics - noisy signals - time series - filtering - identification.}
+
+\newpage
+
+\cardtitle{Marco Piovesan}{UniVR Department of Economics}{Full Professor - Behavioural and experimental economics}
+\begin{minipage}[t]{0.49\linewidth}
+\boxsection{softblue}{Glance profile}{
+\textbf{Main field:} behavioural and experimental economics.\\
+\textbf{Official sector:} ECON-01/A Economics; ERC fields: behavioural/experimental economics, neuro-economics, social cognition, applied microeconomics.\\
+\textbf{Career anchor:} Professor at University of Copenhagen and Research Fellow at Harvard Business School before Verona.\\
+\textbf{Teaching anchor:} Behavioural and Experimental Economics; Principles of Economics; Advice to Young Economists.
+}
+\boxsection{softgreen}{Research map}{
+\begin{itemize}
+\item Behavioural responses to incentives and rules.
+\item Social preferences, cooperation, norms, fairness and strategic behaviour.
+\item Experimental and applied microeconomic designs.
+\item Individual decision-making under incentives and institutional constraints.
+\item Public engagement / third mission roles at department level.
+\end{itemize}
+}
+\boxsection{softamber}{Methods / data intuition}{
+Lab and field experiments, behavioural mechanism design, treatment variation, individual choices, strategic response and causal interpretation of incentives.
+}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}
+\boxsection{softgreen}{Fit with Felix}{
+\fitline{Direct overlap}{incentives, selection, behavioural responses to programme design.}
+\fitline{Method overlap}{experimental logic complements RDD/DID by clarifying mechanisms.}
+\fitline{Proposal link}{applicants may strategically respond to selection rules; rules affect what firms reveal, emphasise or manipulate.}
+\fitline{Useful angle}{selection design is also behavioural design. It shapes application behaviour before the grant is awarded.}
+}
+\boxsection{softblue}{Use in oral exam}{
+\textit{``Prof. Piovesan is relevant because my proposal is not only about estimating grant effects after allocation. It also asks how selection rules shape behaviour before allocation. Behavioural and experimental economics gives a useful way to think about applicants' incentives, strategic responses and the credibility of observable application signals.''}
+}
+\boxsection{softred}{Do not overstate}{
+Do not say he studies start-up grants directly. The fit is behavioural mechanism, incentives, application behaviour and experimental intuition.
+}
+\boxsection{softamber}{Good questions to ask}{
+\begin{itemize}
+\item How can I think about applicant behaviour when scoring criteria are public?
+\item Which selection rules create genuine information, and which create strategic reporting?
+\item Could a small experimental component complement the administrative-data design?
+\item How should I distinguish selection effects from behavioural responses to the call? 
+\end{itemize}
+}
+\end{minipage}
+\vfill{\scriptsize Source anchors: official UniVR profile; Felix proposal, June 2026. Memorise: behavioural economics - incentives - strategic response - selection rules - experiments.}
+
+\end{document}
