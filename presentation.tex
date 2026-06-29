@@ -24,7 +24,10 @@
 \definecolor{muted}{HTML}{7A8691}      % captions, subtitles, secondary text
 \definecolor{danger}{HTML}{C44536}     % alerts / exclusion figures
 \definecolor{VeronaBlue}{RGB}{18,45,75}
+\definecolor{SoftGrey}{RGB}{245,246,248}
 \newcommand{\highlight}[1]{\textcolor{VeronaBlue}{\textbf{#1}}}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
 % ------------------------------------------------------------- bemer colors -
 \setbeamercolor{structure}{fg=slate}
 \setbeamercolor{normal text}{fg=ink,bg=white}
@@ -319,51 +322,92 @@
 \end{frame}
 
 \begin{frame}{Empirical framework}
-  \begin{itemize}
-    \item \highlight{Unit:} enterprise--application or enterprise--programme observation
-    \item \highlight{Population:} SMEs applying or eligible for innovation support
-    \item \highlight{Variation:} scoring rules, thresholds, grant amounts, programme design
-    \item \highlight{Comparison:} firms close to allocation margins, or comparable firms over time
+  \begin{center}
+  \begin{tikzpicture}[
+          node distance=1.0cm and 1.15cm,
+          >=Latex,
+          box/.style={
+              draw=VeronaBlue,
+              thick,
+              rounded corners=3pt,
+              fill=SoftGrey,
+              minimum width=2.5cm,
+              minimum height=0.95cm,
+              align=center,
+              font=\small
+          },
+          arrow/.style={-{Latex[length=2.5mm]}, thick, draw=VeronaBlue}
+      ]
+
+      \node[box] (signals) {Signals};
+      \node[box, right=of signals] (weights) {Weights};
+      \node[box, right=of weights] (decision) {Decision};
+      \node[box, right=of decision] (outcomes) {Outcomes};
+
+      \draw[arrow] (signals) -- (weights);
+      \draw[arrow] (weights) -- (decision);
+      \draw[arrow] (decision) -- (outcomes);
+  \end{tikzpicture}
+  \end{center}
+
+  The unit of analysis is the \highlight{firm--application}. The project links three layers of data:
+  \vspace{0.15cm}
+  \begin{itemize} \small
+    \item \highlight{Selection signals:} founder, project, technology, and regional characteristics
+    \item \highlight{Selection rule:} how programmes weight these signals in the funding decision
+    \item \highlight{Outcome layers:} innovation, spillover potential, and economic value
   \end{itemize}
+  \vspace{0.15cm}
 
-  \vspace{0.4cm}
-
-  The empirical design depends on data access, but the estimand must stay narrow.
+  \vspace{0.15cm}
+  \small The empirical object is not the grant alone, but the link between \highlight{what programmes select for} and \highlight{what selected firms later generate}.
 \end{frame}
 
-\begin{frame}{Research Proposal: Data and Methodology}
-  \begin{columns}[T]
-    \begin{column}{0.48\textwidth}
-      \textbf{Data Sources}
-      \begin{itemize}
-        \item Programme documents, scoring rubrics, beneficiary lists (EU transparency mandate)
-        \item CORDA / ORBIS --- applicant-level award data
-        \item EPO / Patstat --- patent records
-        \item Business registers \& regional employment data
-        \item EIC Accelerator score-level data
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \textbf{Identification Strategy}
-      \begin{itemize}
-        \item \textbf{Preferred:} Regression discontinuity at score / budget cut-offs
-          (Imbens \& Lemieux, 2008)
-        \item \textbf{Alternative:} DiD / event study across calls, regions, countries
-          (Callaway \& Sant'Anna, 2021)
-        \item \textbf{Threats:} Self-selection into application, score manipulation near cut-offs,
-          survivorship bias
-      \end{itemize} 
-    \end{column}
-  \end{columns}
+
+\begin{frame}{Identification strategy}
+  \large Identification comes from variation in \highlight{selection rules}, not only from grant receipt.
+  \vspace{0.35cm}
+  \normalsize The project compares how different programmes weight observable signals and whether those weights predict later outcomes.
+  \vspace{0.25cm}
+  \begin{itemize}
+    \item Compare applicants within programmes and calls
+    \item Use rankings, thresholds, or score cutoffs where available
+    \item Compare programmes that define public value differently
+    \item Test alignment between signal weights and realised outcome layers
+  \end{itemize}
+  \vspace{0.35cm}
+  \small Where clean cutoffs exist, the design can estimate local causal effects. Otherwise, the core estimate is the \highlight{selection--outcome alignment gap}.
+\end{frame}
+
+\begin{frame}{Identification strategy}
+
+\large
+Identification comes from \highlight{variation in selection rules}.
+
+\vspace{0.4cm}
+
+\normalsize
+\begin{itemize}
+  \item within-call applicant comparisons
+  \item rankings, thresholds, score cutoffs
+  \item programmes with different value definitions
+  \item alignment between signal weights and outcomes
+\end{itemize}
+
+\vspace{0.3cm}
+
+\small
+Fallback estimand: \highlight{selection--outcome alignment gap}
+
 \end{frame}
 
 \begin{frame}{Expected Contribution} 
-\begin{itemize} 
-  \item \textbf{Empirical:} estimate whether selection signals generate the outcomes used to justify public support. 
-  \item \textbf{Conceptual:} separate the effect of receiving a grant from the design of the rules that allocate grants. 
-  \item \textbf{Policy-relevant:} identify where programme objectives and actual selection practice diverge.
-  \item \textbf{PhD logic:} the project can begin as one empirical paper on grant selection design and develop into a broader research agenda on innovation policy. 
-\end{itemize} 
+  \begin{itemize} 
+    \item \textbf{Empirical:} estimate whether selection signals generate the outcomes used to justify public support. 
+    \item \textbf{Conceptual:} separate the effect of receiving a grant from the design of the rules that allocate grants. 
+    \item \textbf{Policy-relevant:} identify where programme objectives and actual selection practice diverge.
+    \item \textbf{PhD logic:} the project can begin as one empirical paper on grant selection design and develop into a broader research agenda on innovation policy. 
+  \end{itemize} 
 \end{frame}
 
 \begin{frame}{Backup: Data Sources}
