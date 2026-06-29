@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1782725229.96677 "/Users/fwb/git/Proposal-Oral/presentation.tex" "presentation.pdf" "presentation" 1782725230.66218 0
-  "/Users/fwb/git/Proposal-Oral/presentation.tex" 1782725229.77179 16414 525e8bf7ef9b03482cdf5e75685d4fa5 ""
+["pdflatex"] 1782725613.31915 "/Users/fwb/git/Proposal-Oral/presentation.tex" "presentation.pdf" "presentation" 1782725614.06 0
+  "/Users/fwb/git/Proposal-Oral/presentation.tex" 1782725613.12296 16749 4df1f9abc591e704965187ddb4c811e3 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -207,10 +207,10 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1774630490 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774630456 3636772 617e716139a7a749bb2cc97458e75cc9 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "presentation.aux" 1782725230.617 1851 69a9a3b947b72d684ec005ac993f7932 "pdflatex"
-  "presentation.nav" 1782725230.61761 1202 1d50c3857c7a64ab3c9b4eb4b26f9a97 "pdflatex"
-  "presentation.out" 1782725230.36643 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation.tex" 1782725229.77179 16414 525e8bf7ef9b03482cdf5e75685d4fa5 ""
+  "presentation.aux" 1782725614.01439 1851 69a9a3b947b72d684ec005ac993f7932 "pdflatex"
+  "presentation.nav" 1782725614.01498 1202 1d50c3857c7a64ab3c9b4eb4b26f9a97 "pdflatex"
+  "presentation.out" 1782725613.75974 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "presentation.tex" 1782725613.12296 16749 4df1f9abc591e704965187ddb4c811e3 ""
   (generated)
   "presentation.aux"
   "presentation.log"
