@@ -1,0 +1,398 @@
+% ============================================================================
+%  presentation.tex  --  redesigned minimal academic Beamer theme
+% ----------------------------------------------------------------------------
+%  Keeps the bottom *progress bar* footline from the original "slate academic"
+%  example (frame-aware, appendix-aware). Everything else is redesigned for a
+%  cleaner, airier, more modern look.
+% ============================================================================
+
+\documentclass[aspectratio=169]{beamer}
+\usepackage{pgf}
+
+\title{Grant Selection Design and Start-Up Innovation}
+\subtitle{Evidence from Design-Dependent Subsidy Effects}
+\author{Felix W.\ Brandes}
+\institute{Università degli Studi di Verona}
+\date{June 2026}
+
+% ---------------------------------------------------------------- palette ---
+\definecolor{slate}{HTML}{3D5A80}      % primary structure (titles, frames) -- map blue
+\definecolor{accent}{HTML}{E0683C}     % warm orange (Fig. 1 map) -> bar, rules, emphasis
+\definecolor{teal}{HTML}{2E7D5B}       % emerald green (positive / good)
+\definecolor{wash}{HTML}{EAF0F2}       % light background wash for blocks
+\definecolor{ink}{HTML}{1C1C1C}        % body text
+\definecolor{muted}{HTML}{7A8691}      % captions, subtitles, secondary text
+\definecolor{danger}{HTML}{C44536}     % alerts / exclusion figures
+
+% ------------------------------------------------------------- bemer colors -
+\setbeamercolor{structure}{fg=slate}
+\setbeamercolor{normal text}{fg=ink,bg=white}
+\setbeamercolor{frametitle}{fg=slate,bg=white}
+\setbeamercolor{framesubtitle}{fg=muted,bg=white}
+\setbeamercolor{title}{fg=slate,bg=white}
+\setbeamercolor{subtitle}{fg=muted,bg=white}
+\setbeamercolor{author}{fg=ink,bg=white}
+\setbeamercolor{date}{fg=muted,bg=white}
+\setbeamercolor{institute}{fg=muted,bg=white}
+\setbeamercolor{item}{fg=accent}
+\setbeamercolor{subitem}{fg=accent!70}
+\setbeamercolor{subsubitem}{fg=muted}
+\setbeamercolor{block title}{fg=white,bg=slate}
+\setbeamercolor{block body}{fg=ink,bg=wash}
+\setbeamercolor{block title alerted}{fg=white,bg=danger}
+\setbeamercolor{block body alerted}{fg=ink,bg=danger!8}
+\setbeamercolor{block title example}{fg=white,bg=teal}
+\setbeamercolor{block body example}{fg=ink,bg=teal!8}
+\setbeamercolor{alerted text}{fg=danger}
+\setbeamercolor{footline}{fg=muted,bg=white}
+\setbeamercolor{caption name}{fg=slate}
+
+% -------------------------------------------------------------- bemer fonts -
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\small,series=\mdseries}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{subtitle}{size=\normalsize,series=\mdseries}
+\setbeamerfont{author}{size=\small,series=\mdseries}
+\setbeamerfont{date}{size=\small,series=\mdseries}
+\setbeamerfont{footline}{size=\scriptsize,series=\mdseries}
+\setbeamerfont{block title}{size=\normalsize,series=\bfseries}
+\setbeamerfont{caption}{size=\scriptsize}
+\setbeamerfont{caption name}{size=\scriptsize,series=\bfseries}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\pdfstringdefDisableCommands{\def\translate#1{#1}}
+
+% --------------------------------------------------------- itemize markers --
+\setbeamertemplate{itemize item}{%
+  \usebeamercolor[fg]{item}\small$\blacktriangleright$%
+}
+\setbeamertemplate{itemize subitem}{%
+  \usebeamercolor[fg]{subitem}\footnotesize$\triangleright$%
+}
+\setbeamertemplate{itemize subsubitem}{%
+  \usebeamercolor[fg]{subsubitem}\scriptsize$\bullet$%
+}
+\setlength{\leftmargini}{1.4em}
+\setbeamertemplate{itemize/enumerate body begin}{\vspace{0.3ex}}
+% a little air between top-level items
+\let\olditemize\itemize
+\renewcommand{\itemize}{\olditemize\itemsep0.5ex\relax}
+
+% ----------------------------------------------------------- frame title ----
+\makeatletter
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \vspace{0.45ex}%
+  \begin{beamercolorbox}[wd=\paperwidth,sep=0pt]{frametitle}
+    \hspace*{0.7cm}%
+    \begin{minipage}{\dimexpr\paperwidth-1.4cm\relax}
+      {\usebeamerfont{frametitle}\strut\insertframetitle\par}%
+      \vspace{-0.15ex}%
+      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}%
+        \strut\ifx\insertframesubtitle\@empty\else\insertframesubtitle\fi\par}%
+      \vspace{-0.15ex}%
+      % short, left-aligned accent rule (airier than a full-width line)
+      {\color{accent}\rule{2.2cm}{1.4pt}}%
+    \end{minipage}%
+  \end{beamercolorbox}%
+}
+\addtobeamertemplate{frametitle}{\vspace*{1mm}}{\vspace*{0.2mm}}
+
+% -------------------------------------------------------------- title page --
+\defbeamertemplate*{title page}{slate modern}{%
+  \vbox{}\vfill
+  % cited-paper kicker
+  \ifx\beamer@shortauthor\@empty\else\fi
+  {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}%
+    \scshape based on the paper\par}%
+  \vspace{0.8ex}%
+  \begin{beamercolorbox}[wd=\textwidth,leftskip=0pt]{title}
+    \usebeamerfont{title}\inserttitle\par%
+  \end{beamercolorbox}%
+  \vspace{0.9ex}%
+  {\color{accent}\rule{0.45\paperwidth}{1.6pt}}\par%
+  \vspace{1.3ex}%
+  \begin{beamercolorbox}[wd=\textwidth,leftskip=0pt]{subtitle}
+    \usebeamerfont{subtitle}\insertsubtitle\par%
+  \end{beamercolorbox}%
+  \vfill
+  \noindent
+  \begin{minipage}[t]{0.62\textwidth}
+    \raggedright
+    {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
+    \vspace{0.6ex}%
+    {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.34\textwidth}
+    \raggedleft
+    {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
+  \end{minipage}%
+  \vspace{1.6ex}%
+}
+\setbeamertemplate{title page}[slate modern]
+
+% =============================================================== PROGRESS BAR
+%  (preserved from the user's original example, lightly cleaned)
+% ----------------------------------------------------------------------------
+\newlength{\beamerstyle@progresswidth}
+\newif\ifbeamerstyle@appendix
+\beamerstyle@appendixfalse
+\let\beamerstyle@oldappendix\appendix
+\renewcommand{\appendix}{%
+  \beamerstyle@appendixtrue%
+  \beamerstyle@oldappendix%
+  \setcounter{framenumber}{0}%
+}
+
+\newcommand{\beamerstyle@setmainframes}{%
+  \edef\beamerstyle@mainframes{\inserttotalframenumber}%
+  \ifcsname insertmainframenumber\endcsname%
+    \ifx\insertmainframenumber\@empty\else%
+      \edef\beamerstyle@mainframes{\insertmainframenumber}%
+    \fi%
+  \fi%
+  \edef\beamerstyle@displayframe{\insertframenumber}%
+  \ifbeamerstyle@appendix%
+    \edef\beamerstyle@mainframes{\inserttotalframenumber}%
+    \ifcsname appendixtotalframenumber\endcsname%
+      \edef\beamerstyle@mainframes{\appendixtotalframenumber}%
+    \fi%
+    \@ifundefined{beamerstyle@appendixtotal}{}{%
+      \edef\beamerstyle@mainframes{\beamerstyle@appendixtotal}%
+    }%
+  \fi%
+}
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \begingroup%
+  \beamerstyle@setmainframes%
+  \pgfmathsetmacro{\beamerstyle@progressratio}{%
+    min(\beamerstyle@displayframe/max(\beamerstyle@mainframes,1),1)%
+  }%
+  \setlength{\beamerstyle@progresswidth}{\beamerstyle@progressratio\paperwidth}%
+  \makebox[0pt][l]{\color{muted!28}\rule{\paperwidth}{0.55pt}}%
+  \makebox[0pt][l]{\color{accent}\rule{\beamerstyle@progresswidth}{0.9pt}}%
+  \par\vspace{1.0ex}%
+  \hbox to \paperwidth{%
+    \hfill%
+    \usebeamerfont{footline}\usebeamercolor[fg]{footline}%
+    \beamerstyle@displayframe\,/\,\beamerstyle@mainframes\hspace{0.7cm}%
+  }%
+  \vspace{0.6ex}%
+  \endgroup%
+}
+\makeatother
+
+% No persistent header breadcrumb.
+\setbeamertemplate{headline}{}
+
+% ===================================================== speaker-notes page ====
+% Note page: section breadcrumb (accent mark, top-left) + small slide thumbnail
+% (top-right) + the note text. NO date, no grey spine.
+\makeatletter
+\defbeamertemplate{note page}{clean}{%
+  \nointerlineskip
+  \begin{minipage}[t]{0.60\linewidth}\vspace{0pt}%
+    {\footnotesize\color{muted}\insertshorttitle}\par\vspace{1pt}%
+    {\color{accent}\rule[-0.35ex]{1.1mm}{2.7ex}}\hspace{2mm}%
+    {\normalsize\color{slate}\bfseries
+       \ifbeamerstyle@appendix Backup / Q\&A\else\insertsection\fi}%
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\raggedleft
+    \insertslideintonotes{0.30}%
+  \end{minipage}\par
+  \vspace{1.5mm}{\color{accent!45}\rule{\linewidth}{0.7pt}}\par\vspace{3mm}%
+  \setbeamertemplate{itemize item}{\small\color{accent}\textbullet}%
+  \setbeamertemplate{itemize subitem}{\scriptsize\color{accent!70}--}%
+  \setbeamerfont{itemize/enumerate body}{size=\small}%
+  \setlength{\leftmargini}{1.5em}%
+  {\small\insertnote}%
+}
+\makeatother
+\setbeamertemplate{note page}[clean]
+
+% ===================================================== section divider slides
+\setbeamertemplate{section in toc}{%
+  \leavevmode\leftskip=0pt%
+  {\color{accent}$\blacktriangleright$}\,\inserttocsection\par%
+}
+\setbeamertemplate{subsection in toc}{}  % keep dividers clean
+
+\makeatletter
+\AtBeginSection[]{%
+  \ifbeamerstyle@appendix\else
+    \begin{frame}[plain,noframenumbering]
+      \vfill
+      {\color{accent}\rule{0.16\paperwidth}{2.4pt}}\par
+      \vspace{1.0ex}
+      {\usebeamerfont{title}\usebeamercolor[fg]{title}\insertsection\par}
+      \vspace{1.4ex}
+      {\scriptsize
+        \begin{minipage}{0.82\paperwidth}
+          \setlength{\parskip}{0.2ex}
+          \tableofcontents[currentsection,hideallsubsections,%
+                           sectionstyle=show/shaded]
+        \end{minipage}}
+      \vfill
+    \end{frame}%
+  \fi
+}
+\makeatother
+
+
+\begin{document}
+
+\begin{frame}[plain,noframenumbering]
+  \titlepage
+\end{frame}
+
+% ---------------------------------------------------------------- Slide 1 ---
+\begin{frame}{Curriculum Vitae}
+  \begin{itemize}
+    \item \textbf{School} \\
+      Sidcot Independent School {\color{muted}\small England \hfill 2012--2014} \\
+      {\color{muted}\small International Baccalaureate}
+    \vspace{0.8ex}
+    \item \textbf{University} \\
+      Technical University of Munich {\color{muted}\small B.Sc. Technology and Management \hfill 2014--2020} \\  
+      Technical University of Munich {\color{muted}\small M.Sc. Technology and Management \hfill 2020--2024} \\ 
+    \vspace{0.8ex}
+    \item \textbf{Professional Experience} \\
+      CoInvest Corporate Finance {\color{muted}\small Analyst \hfill 2021--2024} \\  
+      agentix GmbH {\color{muted}\small Co-Founder \& COO \hfill 2024--2025} \\
+      Independent Management Consultant {\color{muted}\small  \hfill 2024--present}
+  \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------- Slide 2 ---
+\begin{frame}{Master Thesis}
+  \begin{block}{Research Question}
+    How can you improve investments into Start-Ups and SMEs through
+    legislative change of Investment Modalities?
+  \end{block}
+\end{frame}
+
+% ---------------------------------------------------------------- Slide 3 ---
+\begin{frame}{Agentix}
+  \begin{itemize}
+    \item AI at the forefront of Innovation
+    \item \textit{``Automating Cognitive Workflows''}
+    \item Recipient of EXIST Grant
+  \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------- Slide 4 ---
+\begin{frame}{Research Proposal: Overview}
+    \begin{block}{Core Question} Do the selection signals used in public SME and start-up funding programmes generate technological innovation, observable spillover, and economic value? 
+    \end{block}
+  \vspace{0.6ex}
+  \begin{itemize}
+    \item \textbf{Motivation:} Private returns to innovation fall short of social returns
+      (Arrow, 1962) --- the appropriability problem is sharpest for early-stage firms
+    \item \textbf{Gap:} Literature evaluates \emph{whether} grants work; not \emph{which
+      selection signals} generate which outcomes
+    \item \textbf{Contribution:} Shifts programme evaluation from beneficiary status to the
+      economic content of the selection rules
+  \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------- Slide 5 ---
+\begin{frame}{Theoretical Framework}
+  \textbf{Two-step design}
+  \vspace{0.5ex}
+  \begin{itemize}
+    \item[\color{accent}1.] \textbf{Identify the selection rule} --- code programme documents,
+      scoring rubrics and eligibility criteria; recover implied signal weights; compare
+      stated vs.\ applied weights
+    \item[\color{accent}2.] \textbf{Estimate causal effects} --- regression-discontinuity around
+      score / budget cut-offs; applicants just above and below the threshold are otherwise
+      comparable
+  \end{itemize}
+  \vspace{0.8ex}
+  \textbf{Three outcome layers}
+  \vspace{0.3ex}
+  \begin{itemize}
+    \item \textbf{Technological Innovation} --- patents, product/process launches, technology-class novelty
+    \item \textbf{Observable Spillover} --- licensing, research collaborations, technology diffusion
+    \item \textbf{Economic Value} --- employment, enterprise survival, cluster/sector growth
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Empirical Framework} 
+\begin{itemize} 
+  \item \textbf{Unit of analysis:} enterprise--application pair. 
+  \item \textbf{Object of interest:} observable application signals used in the funding decision. 
+  \item \textbf{Treatment margin:} applicants just above and just below score or budget cut-offs. 
+  \item \textbf{Preferred design:} regression discontinuity around selection thresholds. 
+  \item \textbf{Outcome hierarchy:} 
+  \begin{itemize} 
+    \item technological innovation
+    \item observable spillover
+    \item local economic value
+  \end{itemize} 
+\end{itemize} 
+\end{frame}
+
+
+% ---------------------------------------------------------------- Slide 6 ---
+\begin{frame}{Research Proposal: Data and Methodology}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Data Sources}
+      \begin{itemize}
+        \item Programme documents, scoring rubrics, beneficiary lists (EU transparency mandate)
+        \item CORDA / ORBIS --- applicant-level award data
+        \item EPO / Patstat --- patent records
+        \item Business registers \& regional employment data
+        \item EIC Accelerator score-level data
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Identification Strategy}
+      \begin{itemize}
+        \item \textbf{Preferred:} Regression discontinuity at score / budget cut-offs
+          (Imbens \& Lemieux, 2008)
+        \item \textbf{Alternative:} DiD / event study across calls, regions, countries
+          (Callaway \& Sant'Anna, 2021)
+        \item \textbf{Threats:} Self-selection into application, score manipulation near cut-offs,
+          survivorship bias
+      \end{itemize} 
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Expected Contribution} 
+\begin{itemize} 
+  \item \textbf{Empirical:} estimate whether selection signals generate the outcomes used to justify public support. 
+  \item \textbf{Conceptual:} separate the effect of receiving a grant from the design of the rules that allocate grants. 
+  \item \textbf{Policy-relevant:} identify where programme objectives and actual selection practice diverge.
+  \item \textbf{PhD logic:} the project can begin as one empirical paper on grant selection design and develop into a broader research agenda on innovation policy. 
+\end{itemize} 
+\end{frame}
+
+\begin{frame}{Backup: Data Sources}
+  \begin{itemize}
+    \item Programme documents, eligibility criteria, scoring rubrics and beneficiary lists.
+    \item Applicant-level award data from CORDA / ORBIS where accessible.
+    \item Patent data from EPO / PATSTAT.
+    \item Firm accounts, business registers and regional employment data.
+    \item Score-level data from programmes such as the EIC Accelerator where available.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Backup: Identification Risks}
+  \begin{itemize}
+    \item Self-selection into application.
+    \item Score manipulation near cut-offs.
+    \item Missing or incomplete score-level data.
+    \item Survivorship bias in firm-level outcomes.
+    \item Outcome correlation across innovation, spillover and economic-value layers.
+  \end{itemize}
+\end{frame}
+
+\end{document}
